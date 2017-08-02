@@ -130,7 +130,7 @@ def on_message(client, userdata, msg):
 
 
 # device config file path
-device_file_path = 'dns.pckl'
+device_file_path = '/dns/dns.pckl'
 
 # Load config from registrar
 try:
@@ -184,6 +184,4 @@ while True:
         time.sleep(error_timeout)
         continue
 
-    while True:
-        client.loop()
-        time.sleep(1)
+    client.loop_forever()

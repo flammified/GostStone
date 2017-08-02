@@ -1,0 +1,15 @@
+version: '2'
+services:
+    web:
+        build: ./GostStone-middleware
+        environment:
+            - mqtt_host=gost.geodan.nl
+            - mqtt_port=1883
+            - sensorthings_host=gost.geodan.nl
+            - sensorthings_port=80
+        volumes:
+            - dns:/dns
+
+volumes:
+    logs: {}
+    dns: {}
